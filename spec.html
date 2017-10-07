@@ -105,11 +105,9 @@ contributors: Domenic Denicola
             <td><ins>[[Meta]]</ins></td>
             <td><ins>Object | *undefined*</ins></td>
             <td>
-              <ins>An object exposed through the `import.meta` meta property. Concrete subclasses of
-              the Abstract Module Record specification type are expected to fill this field when
-              creating the Module Record, usually by delegating to the host environment. It is
-              *undefined* by default, but must become an Object before it is ever accessed by
-              ECMAScript code.</ins>
+              <ins>An object exposed through the `import.meta` meta property. It is *undefined* by
+              default, but will become an Object before it is ever accessed by ECMAScript
+              code.</ins>
             </td>
           </tr>
           <tr>
@@ -264,7 +262,7 @@ contributors: Domenic Denicola
       1. <ins>Assert: _module_ is a Module Record (not a Script Record).</ins>
       1. <ins>Let _importMeta_ be _module_.[[ImportMeta]].</ins>
       1. <ins>If _importMeta_ is *undefined*.
-        1. <ins>Let _importMeta_ be ObjectCreate(*null*).</ins>
+        1. <ins>Set _importMeta_ to ObjectCreate(*null*).</ins>
         1. <ins>Let _importMetaValues_ be ! HostGetImportMetaProperties(_module_).</ins>
         1. <ins>For each Record {[[Key]], [[Value]]} _p_ that is an element of _importMetaValues_,</ins>
         1. <ins>Perform ! CreateDataProperty(_importMeta_, _p_.[[Key]], _p_.[[Value]]).</ins>
