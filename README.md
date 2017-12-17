@@ -122,7 +122,7 @@ console.log(moduleURL);
 console.log(moduleScriptElement);
 ```
 
-From an implementation and spec perspective, this could be done with no ECMAScript spec changes by, for example, the host prepending appropriate variable declarations to every module source text before handing it off to the ECMAScript spec mechanisms. Alternately, the host could introduce a new type of module record that has a slightly different scope for its [[Environment]] field. (Or ECMASCript could be modified to allow hosts to intervene in setting up the [[Environment]] of a source text module record.)
+From an implementation and spec perspective, this could be done with no ECMAScript spec changes by, for example, the host prepending appropriate variable declarations to every module source text before handing it off to the ECMAScript spec mechanisms. Alternately, the host could introduce a new type of module record that has a slightly different scope for its `[[Environment]]` field. (Or ECMASCript could be modified to allow hosts to intervene in setting up the `[[Environment]]` of a source text module record.)
 
 The committee was generally against handling this idea in ECMAScript as several members were not a fan of "polluting" module scopes with new variables. It remains a fallback option for web hosts if `import.meta` fails to advance quickly enough.
 
